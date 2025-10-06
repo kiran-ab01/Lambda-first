@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def hello():
-    return "Hello from AWS ECR + GitHub Actions!"
+    return "Hello from AWS ECR + GitHub Actions!-new release"
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
