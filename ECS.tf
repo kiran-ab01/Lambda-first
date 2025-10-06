@@ -58,8 +58,8 @@ resource "aws_ecs_task_definition" "my_task" {
 
   container_definitions = jsonencode([
     {
-      name      = "nginx"
-      image     = "nginx:latest"
+      name      = "deploy-aws-ecr"
+      image     = "226290659955.dkr.ecr.us-east-1.amazonaws.com/deploy-aws-ecr@sha256:59327bf0b7e551b15a50cc64e1e7081e7c55de072d24b5f399007198fe65b4f3"
       essential = true
       portMappings = [
         {
