@@ -41,14 +41,14 @@ resource "aws_security_group" "ecs_sg" {
 # ------------------------
 # ECS Cluster
 # ------------------------
-resource "aws_ecs_cluster" "my_cluster" {
+resource "aws_ecs_cluster" "my_cluster1" {
   name = "simple-ecs-cluster"
 }
 
 # ------------------------
 # ECS Task Definition
 # ------------------------
-resource "aws_ecs_task_definition" "my_task" {
+resource "aws_ecs_task_definition" "my_task1" {
   family                   = "simple-task"
   network_mode             = "awsvpc"
   requires_compatibilities = ["FARGATE"]
@@ -73,7 +73,7 @@ resource "aws_ecs_task_definition" "my_task" {
 # ------------------------
 # ECS Service
 # ------------------------
-resource "aws_ecs_service" "my_service" {
+resource "aws_ecs_service" "my_service1" {
   name            = "simple-service"
   cluster         = aws_ecs_cluster.my_cluster.id
   task_definition = aws_ecs_task_definition.my_task.arn
